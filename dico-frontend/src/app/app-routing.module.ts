@@ -4,6 +4,7 @@ import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.
 import { DescargarComponent } from './components/descargar/descargar.component';
 
 const routes: Routes = [
+  { path: '', component: CrearUsuarioComponent},
   { path: 'crear', component: CrearUsuarioComponent },
   { path: 'descargar', component: DescargarComponent },
 ];

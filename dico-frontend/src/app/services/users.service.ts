@@ -1,22 +1,23 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { url } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
 
+  url = 'http://localhost:3000'
+
   constructor(private http: HttpClient) { }
 
   crearUsuario( objeto: any ): any {
-    return this.http.post(`${url}/users/create`, objeto ).toPromise()
+    return this.http.post(`${this.url}/users/create`, objeto ).toPromise()
       .then(res => res)
       .catch(err => err.error);
   }
 
   getAll(): any {
-    return this.http.get(`${url}/users/getall`).toPromise()
+    return this.http.get(`${this.url}/users/getall`).toPromise()
       .then(res => res)
       .catch(err => err.error);
   }
